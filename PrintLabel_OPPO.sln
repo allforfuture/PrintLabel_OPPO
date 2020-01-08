@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintLabel_OPPO", "PrintLabel_OPPO\PrintLabel_OPPO.csproj", "{A456DA2F-3DFD-4630-A01E-C13F3AD28FA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A456DA2F-3DFD-4630-A01E-C13F3AD28FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A456DA2F-3DFD-4630-A01E-C13F3AD28FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A456DA2F-3DFD-4630-A01E-C13F3AD28FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A456DA2F-3DFD-4630-A01E-C13F3AD28FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4E3A1AF-27DA-4AA2-8C32-11CB89207A50}
+	EndGlobalSection
+EndGlobal
