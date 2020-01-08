@@ -40,7 +40,7 @@
             this.txtMSD = new System.Windows.Forms.TextBox();
             this.txtLN = new System.Windows.Forms.TextBox();
             this.txtDC = new System.Windows.Forms.TextBox();
-            this.txtDate = new System.Windows.Forms.TextBox();
+            this.txtDATE = new System.Windows.Forms.TextBox();
             this.txtUPN = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -57,37 +57,37 @@
             this.label19 = new System.Windows.Forms.Label();
             this.printDocument2 = new System.Drawing.Printing.PrintDocument();
             this.pnl2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.txtDescribe2 = new System.Windows.Forms.TextBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.txtQTY2 = new System.Windows.Forms.TextBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.txtProduct = new System.Windows.Forms.TextBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txtVendor = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picQRcode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUPN)).BeginInit();
             this.pnl2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPrint
@@ -124,7 +124,7 @@
             this.pnl.Controls.Add(this.txtMSD);
             this.pnl.Controls.Add(this.txtLN);
             this.pnl.Controls.Add(this.txtDC);
-            this.pnl.Controls.Add(this.txtDate);
+            this.pnl.Controls.Add(this.txtDATE);
             this.pnl.Controls.Add(this.txtUPN);
             this.pnl.Controls.Add(this.label23);
             this.pnl.Controls.Add(this.label21);
@@ -152,7 +152,6 @@
             this.txtDescribe.Name = "txtDescribe";
             this.txtDescribe.Size = new System.Drawing.Size(265, 52);
             this.txtDescribe.TabIndex = 57;
-            this.txtDescribe.Text = "摄像头IMX278 13.0M 8.5×8.5×4.572 5P BTB 5BAD13P1D\r\nOK";
             // 
             // txtHard
             // 
@@ -169,7 +168,6 @@
             this.txtSoft.Name = "txtSoft";
             this.txtSoft.Size = new System.Drawing.Size(55, 26);
             this.txtSoft.TabIndex = 56;
-            this.txtSoft.Text = "V1.0";
             // 
             // txtQC
             // 
@@ -178,25 +176,22 @@
             this.txtQC.Name = "txtQC";
             this.txtQC.Size = new System.Drawing.Size(94, 26);
             this.txtQC.TabIndex = 54;
-            this.txtQC.Text = "HG";
             // 
             // txtQTY
             // 
             this.txtQTY.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtQTY.Location = new System.Drawing.Point(204, 166);
             this.txtQTY.Name = "txtQTY";
-            this.txtQTY.Size = new System.Drawing.Size(33, 26);
+            this.txtQTY.Size = new System.Drawing.Size(40, 26);
             this.txtQTY.TabIndex = 54;
-            this.txtQTY.Text = "100";
             // 
             // txtMSD
             // 
             this.txtMSD.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtMSD.Location = new System.Drawing.Point(204, 79);
             this.txtMSD.Name = "txtMSD";
-            this.txtMSD.Size = new System.Drawing.Size(33, 26);
+            this.txtMSD.Size = new System.Drawing.Size(40, 26);
             this.txtMSD.TabIndex = 54;
-            this.txtMSD.Text = "1";
             // 
             // txtLN
             // 
@@ -205,7 +200,6 @@
             this.txtLN.Name = "txtLN";
             this.txtLN.Size = new System.Drawing.Size(188, 26);
             this.txtLN.TabIndex = 53;
-            this.txtLN.Text = "20160330/20160331";
             // 
             // txtDC
             // 
@@ -214,16 +208,14 @@
             this.txtDC.Name = "txtDC";
             this.txtDC.Size = new System.Drawing.Size(188, 26);
             this.txtDC.TabIndex = 53;
-            this.txtDC.Text = "1611/1612/1613";
             // 
-            // txtDate
+            // txtDATE
             // 
-            this.txtDate.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtDate.Location = new System.Drawing.Point(49, 79);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(94, 26);
-            this.txtDate.TabIndex = 53;
-            this.txtDate.Text = "2017-04-01";
+            this.txtDATE.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtDATE.Location = new System.Drawing.Point(49, 79);
+            this.txtDATE.Name = "txtDATE";
+            this.txtDATE.Size = new System.Drawing.Size(94, 26);
+            this.txtDATE.TabIndex = 53;
             // 
             // txtUPN
             // 
@@ -232,7 +224,6 @@
             this.txtUPN.Name = "txtUPN";
             this.txtUPN.Size = new System.Drawing.Size(294, 26);
             this.txtUPN.TabIndex = 52;
-            this.txtUPN.Text = "9490168-A1391-16401-00001";
             // 
             // label23
             // 
@@ -385,81 +376,77 @@
             this.pnl2.Size = new System.Drawing.Size(346, 276);
             this.pnl2.TabIndex = 60;
             // 
-            // panel4
+            // panel12
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Location = new System.Drawing.Point(8, 15);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(330, 50);
-            this.panel4.TabIndex = 0;
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.txtDescribe2);
+            this.panel12.Location = new System.Drawing.Point(132, 211);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(206, 50);
+            this.panel12.TabIndex = 59;
             // 
-            // label8
+            // txtDescribe2
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(53, 12);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(178, 24);
-            this.label8.TabIndex = 55;
-            this.label8.Text = "OPPO物料标识贴";
+            this.txtDescribe2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDescribe2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtDescribe2.Location = new System.Drawing.Point(0, 12);
+            this.txtDescribe2.Name = "txtDescribe2";
+            this.txtDescribe2.Size = new System.Drawing.Size(204, 28);
+            this.txtDescribe2.TabIndex = 57;
             // 
-            // panel5
+            // panel11
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Location = new System.Drawing.Point(8, 64);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(125, 50);
-            this.panel5.TabIndex = 56;
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.txtQTY2);
+            this.panel11.Location = new System.Drawing.Point(132, 162);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(206, 50);
+            this.panel11.TabIndex = 59;
             // 
-            // label9
+            // txtQTY2
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("宋体", 16F);
-            this.label9.Location = new System.Drawing.Point(0, 12);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 22);
-            this.label9.TabIndex = 55;
-            this.label9.Text = "供应商代码";
+            this.txtQTY2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQTY2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtQTY2.Location = new System.Drawing.Point(0, 12);
+            this.txtQTY2.Name = "txtQTY2";
+            this.txtQTY2.Size = new System.Drawing.Size(204, 28);
+            this.txtQTY2.TabIndex = 57;
             // 
-            // panel6
+            // panel10
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Location = new System.Drawing.Point(8, 113);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(125, 50);
-            this.panel6.TabIndex = 57;
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.txtProduct);
+            this.panel10.Location = new System.Drawing.Point(132, 113);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(206, 50);
+            this.panel10.TabIndex = 59;
             // 
-            // label10
+            // txtProduct
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(8, 12);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 24);
-            this.label10.TabIndex = 55;
-            this.label10.Text = "物料代码";
+            this.txtProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProduct.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtProduct.Location = new System.Drawing.Point(0, 12);
+            this.txtProduct.Name = "txtProduct";
+            this.txtProduct.Size = new System.Drawing.Size(204, 28);
+            this.txtProduct.TabIndex = 57;
             // 
-            // panel7
+            // panel9
             // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.label11);
-            this.panel7.Location = new System.Drawing.Point(8, 162);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(125, 50);
-            this.panel7.TabIndex = 57;
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.txtVendor);
+            this.panel9.Location = new System.Drawing.Point(132, 64);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(206, 50);
+            this.panel9.TabIndex = 58;
             // 
-            // label11
+            // txtVendor
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(8, 12);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(106, 24);
-            this.label11.TabIndex = 55;
-            this.label11.Text = "包装数量";
+            this.txtVendor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtVendor.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtVendor.Location = new System.Drawing.Point(0, 12);
+            this.txtVendor.Name = "txtVendor";
+            this.txtVendor.Size = new System.Drawing.Size(204, 28);
+            this.txtVendor.TabIndex = 57;
             // 
             // panel8
             // 
@@ -480,81 +467,81 @@
             this.label12.TabIndex = 55;
             this.label12.Text = "物体描述";
             // 
-            // textBox1
+            // panel7
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(0, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(204, 28);
-            this.textBox1.TabIndex = 57;
-            this.textBox1.Text = "G117";
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.label11);
+            this.panel7.Location = new System.Drawing.Point(8, 162);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(125, 50);
+            this.panel7.TabIndex = 57;
             // 
-            // panel9
+            // label11
             // 
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Controls.Add(this.textBox1);
-            this.panel9.Location = new System.Drawing.Point(132, 64);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(206, 50);
-            this.panel9.TabIndex = 58;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Location = new System.Drawing.Point(8, 12);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(106, 24);
+            this.label11.TabIndex = 55;
+            this.label11.Text = "包装数量";
             // 
-            // panel10
+            // panel6
             // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.textBox2);
-            this.panel10.Location = new System.Drawing.Point(132, 113);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(206, 50);
-            this.panel10.TabIndex = 59;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Location = new System.Drawing.Point(8, 113);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(125, 50);
+            this.panel6.TabIndex = 57;
             // 
-            // textBox2
+            // label10
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox2.Location = new System.Drawing.Point(0, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(204, 28);
-            this.textBox2.TabIndex = 57;
-            this.textBox2.Text = "4879497";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(8, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(106, 24);
+            this.label10.TabIndex = 55;
+            this.label10.Text = "物料代码";
             // 
-            // panel11
+            // panel5
             // 
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Controls.Add(this.textBox3);
-            this.panel11.Location = new System.Drawing.Point(132, 162);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(206, 50);
-            this.panel11.TabIndex = 59;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Location = new System.Drawing.Point(8, 64);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(125, 50);
+            this.panel5.TabIndex = 56;
             // 
-            // textBox3
+            // label9
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox3.Location = new System.Drawing.Point(0, 12);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(204, 28);
-            this.textBox3.TabIndex = 57;
-            this.textBox3.Text = "1000";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("宋体", 16F);
+            this.label9.Location = new System.Drawing.Point(0, 12);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(120, 22);
+            this.label9.TabIndex = 55;
+            this.label9.Text = "供应商代码";
             // 
-            // panel12
+            // panel4
             // 
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Controls.Add(this.textBox5);
-            this.panel12.Location = new System.Drawing.Point(132, 211);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(206, 50);
-            this.panel12.TabIndex = 59;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Location = new System.Drawing.Point(8, 15);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(330, 50);
+            this.panel4.TabIndex = 0;
             // 
-            // textBox5
+            // label8
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox5.Location = new System.Drawing.Point(0, 12);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(204, 28);
-            this.textBox5.TabIndex = 57;
-            this.textBox5.Text = "VC散热片AD097";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(53, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(178, 24);
+            this.label8.TabIndex = 55;
+            this.label8.Text = "OPPO物料标识贴";
             // 
             // Main
             // 
@@ -573,24 +560,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.picQRcode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUPN)).EndInit();
             this.pnl2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -620,7 +607,7 @@
         private System.Windows.Forms.TextBox txtMSD;
         private System.Windows.Forms.TextBox txtLN;
         private System.Windows.Forms.TextBox txtDC;
-        private System.Windows.Forms.TextBox txtDate;
+        private System.Windows.Forms.TextBox txtDATE;
         private System.Windows.Forms.TextBox txtHard;
         private System.Windows.Forms.TextBox txtDescribe;
         private System.Windows.Forms.Label label19;
@@ -636,14 +623,14 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtVendor;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtDescribe2;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtQTY2;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtProduct;
     }
 }
 

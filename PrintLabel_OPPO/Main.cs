@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Configuration;
+
 namespace PrintLabel_OPPO
 {
     public partial class Main : Form
@@ -16,11 +18,33 @@ namespace PrintLabel_OPPO
         {
             InitializeComponent();
             Text += " " + Application.ProductVersion.ToString();
+            txtUPN.Text = ConfigurationManager.AppSettings["UPN"];
+            txtDATE.Text = ConfigurationManager.AppSettings["DATE"];
+            txtMSD.Text = ConfigurationManager.AppSettings["MSD"];
+            txtDC.Text = ConfigurationManager.AppSettings["DC"];
+            txtLN.Text = ConfigurationManager.AppSettings["LN"];
+            txtQC.Text = ConfigurationManager.AppSettings["QC"];
+            txtQTY.Text = ConfigurationManager.AppSettings["QTY"];
+            txtHard.Text = ConfigurationManager.AppSettings["Hard"];
+            txtSoft.Text = ConfigurationManager.AppSettings["Soft"];
+            txtDescribe.Text = ConfigurationManager.AppSettings["Describe"];
+
+            txtVendor.Text = ConfigurationManager.AppSettings["Vendor"];
+            txtProduct.Text = ConfigurationManager.AppSettings["Product"];
+            txtQTY2.Text = ConfigurationManager.AppSettings["QTY2"];
+            txtDescribe2.Text = ConfigurationManager.AppSettings["Describe2"];
             RefreshImage();
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            //Configuration _config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            //string key = "UPN";
+            //string value = "OK";
+            //_config.AppSettings.Settings.Remove(key);
+            //_config.AppSettings.Settings.Add(key, value);
+            //_config.Save();
+            //return;
             PrintDialog printDialog = new PrintDialog();
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
@@ -45,7 +69,7 @@ namespace PrintLabel_OPPO
         void RefreshImage()
         {
             picUPN.Image = Barcode.BarcodeHelper.Barcode(txtUPN.Text, picUPN.Height);
-            string[] strArr = {txtUPN.Text,txtDate.Text,txtMSD.Text, txtDC.Text,
+            string[] strArr = {txtUPN.Text,txtDATE.Text,txtMSD.Text, txtDC.Text,
             txtLN.Text,txtQC.Text,txtQTY.Text,txtHard.Text,txtSoft.Text};
             string QRcode = string.Join("*", strArr);
             picQRcode.Image = Barcode.BarcodeHelper.QRcode(QRcode, picQRcode.Width, picQRcode.Height);
@@ -54,7 +78,7 @@ namespace PrintLabel_OPPO
         void changeTxtBorderStyle(BorderStyle borderStyle)
         {
             txtUPN.BorderStyle =
-            txtDate.BorderStyle =
+            txtDATE.BorderStyle =
             txtMSD.BorderStyle =
             txtDC.BorderStyle =
             txtLN.BorderStyle =
