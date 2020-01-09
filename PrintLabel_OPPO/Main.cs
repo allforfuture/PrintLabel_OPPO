@@ -8,43 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using System.Configuration;
-
 namespace PrintLabel_OPPO
 {
     public partial class Main : Form
     {
+        public static Main main;
         public Main()
         {
             InitializeComponent();
             Text += " " + Application.ProductVersion.ToString();
-            txtUPN.Text = ConfigurationManager.AppSettings["UPN"];
-            txtDATE.Text = ConfigurationManager.AppSettings["DATE"];
-            txtMSD.Text = ConfigurationManager.AppSettings["MSD"];
-            txtDC.Text = ConfigurationManager.AppSettings["DC"];
-            txtLN.Text = ConfigurationManager.AppSettings["LN"];
-            txtQC.Text = ConfigurationManager.AppSettings["QC"];
-            txtQTY.Text = ConfigurationManager.AppSettings["QTY"];
-            txtHard.Text = ConfigurationManager.AppSettings["Hard"];
-            txtSoft.Text = ConfigurationManager.AppSettings["Soft"];
-            txtDescribe.Text = ConfigurationManager.AppSettings["Describe"];
-
-            txtVendor.Text = ConfigurationManager.AppSettings["Vendor"];
-            txtProduct.Text = ConfigurationManager.AppSettings["Product"];
-            txtQTY2.Text = ConfigurationManager.AppSettings["QTY2"];
-            txtDescribe2.Text = ConfigurationManager.AppSettings["Describe2"];
+            RefreshTxt();
             RefreshImage();
+            main = this;
         }
-
-        private void btnPrint_Click(object sender, EventArgs e)
+        
+        private void 打印ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Configuration _config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            //string key = "UPN";
-            //string value = "OK";
-            //_config.AppSettings.Settings.Remove(key);
-            //_config.AppSettings.Settings.Add(key, value);
-            //_config.Save();
-            //return;
             PrintDialog printDialog = new PrintDialog();
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
@@ -52,6 +31,11 @@ namespace PrintLabel_OPPO
                 printDocument1.Print();
                 printDocument2.Print();
             }
+        }
+
+        private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ConfigSettingForm().ShowDialog();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -66,7 +50,26 @@ namespace PrintLabel_OPPO
             changeTxtBorderStyle(BorderStyle.Fixed3D);
         }
 
-        void RefreshImage()
+        public void RefreshTxt()
+        {
+            txtUPN.Text = Config.GetAppSetting("UPN");
+            txtDATE.Text = Config.GetAppSetting("DATE");
+            txtMSD.Text = Config.GetAppSetting("MSD");
+            txtDC.Text = Config.GetAppSetting("DC");
+            txtLN.Text = Config.GetAppSetting("LN");
+            txtQC.Text = Config.GetAppSetting("QC");
+            txtQTY.Text = Config.GetAppSetting("QTY");
+            txtHard.Text = Config.GetAppSetting("Hard");
+            txtSoft.Text = Config.GetAppSetting("Soft");
+            txtDescribe.Text = Config.GetAppSetting("Describe");
+
+            txtVendor.Text = Config.GetAppSetting("Vendor");
+            txtProduct.Text = Config.GetAppSetting("Product");
+            txtQTY2.Text = Config.GetAppSetting("QTY2");
+            txtDescribe2.Text = Config.GetAppSetting("Describe2");
+        }
+
+        public void RefreshImage()
         {
             picUPN.Image = Barcode.BarcodeHelper.Barcode(txtUPN.Text, picUPN.Height);
             string[] strArr = {txtUPN.Text,txtDATE.Text,txtMSD.Text, txtDC.Text,
