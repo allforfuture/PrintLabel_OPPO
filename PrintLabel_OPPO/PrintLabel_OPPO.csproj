@@ -90,15 +90,36 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="资料\仓库\Z1157699.pdf" />
+    <None Include="资料\需求\A3EC1FD6.tmp" />
+    <None Include="资料\需求\EE149&amp;DD305 Micro Schedule 0101.xlsx" />
+    <None Include="资料\需求\Oppo 项目测试&amp; BC信息 2019_12_25 update - HSU.xlsx" />
+    <None Include="资料\需求\Oppo 项目测试&amp; BC信息 （日文）2019_12_25 update - HSU.xlsx" />
+    <None Include="资料\需求\VC均热板导入要求1910 %28From OPPO 潘工191104%29%29.xlsx" />
+    <None Include="资料\需求\包装规范\Thumbs.db" />
+    <None Include="资料\需求\包装规范\vendorDB.db" />
+    <None Include="资料\需求\包装规范\WJ-CC193-性能測試站SOP.pdf" />
+    <None Include="资料\需求\包装规范\供应商UPN打印_20170830.rar" />
+    <None Include="资料\需求\包装规范\包裝作業標準書-WJ-CC193 .pdf" />
+    <None Include="资料\需求\包装规范\离线版UPN条码打印工具操作指导书.pptx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="资料\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Barcode\zxing.dll" />
+    <Content Include="资料\仓库\《UPN标签》和《物料标示贴》.png" />
+    <Content Include="资料\需求\包装规范\OPPO 外箱標籤參考%28190923%29 %282%29.jpg" />
+    <Content Include="资料\需求\包装规范\OPPO 發運單樣版%28190923%29.jpg" />
+    <Content Include="资料\需求\包装规范\內箱%28未放展品%29.jpg" />
+    <Content Include="资料\需求\包装规范\內箱.jpg" />
+    <Content Include="资料\需求\包装规范\出貨檢驗報告放置位置.jpg" />
+    <Content Include="资料\需求\包装规范\外箱標籤.jpg" />
+    <Content Include="资料\需求\包装规范\樣品出貨標示.jpg" />
+    <Content Include="资料\需求\包装规范\產品包裝方式.jpg" />
+    <Content Include="资料\需求\包装规范\發運單標示貼紙.jpg" />
+    <Content Include="资料\需求\包装规范\發運單黏貼位置.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
