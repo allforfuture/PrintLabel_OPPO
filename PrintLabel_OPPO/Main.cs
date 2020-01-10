@@ -24,13 +24,7 @@ namespace PrintLabel_OPPO
         
         private void 打印ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PrintDialog printDialog = new PrintDialog();
-            if (printDialog.ShowDialog() == DialogResult.OK)
-            {
-                printDocument1.PrinterSettings = printDocument2.PrinterSettings = printDialog.PrinterSettings;
-                printDocument1.Print();
-                printDocument2.Print();
-            }
+            
         }
 
         private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,6 +91,17 @@ namespace PrintLabel_OPPO
             Bitmap bitmap = new Bitmap(pnl2.Width, pnl2.Height);
             pnl2.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
             e.Graphics.DrawImage(bitmap, 0, 0, bitmap.Width, bitmap.Height);
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.PrinterSettings = printDocument2.PrinterSettings = printDialog.PrinterSettings;
+                printDocument1.Print();
+                printDocument2.Print();
+            }
         }
     }
 }

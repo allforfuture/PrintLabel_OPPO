@@ -62,7 +62,7 @@ namespace PrintLabel_OPPO.Barcode   /*LabelPrint*/
             {
                 Height = height,
                 Margin = 2,
-                PureBarcode = true
+                PureBarcode = false
             };
             writer.Options = options;
             Bitmap map = writer.Write(text);
