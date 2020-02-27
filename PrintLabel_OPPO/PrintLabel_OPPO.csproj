@@ -66,6 +66,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property\SN.cs" />
     <EmbeddedResource Include="ConfigSetting.resx">
       <DependentUpon>ConfigSetting.cs</DependentUpon>
     </EmbeddedResource>

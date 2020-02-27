@@ -77,6 +77,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.txtSN = new System.Windows.Forms.TextBox();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picQRcode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUPN)).BeginInit();
@@ -563,11 +564,21 @@
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
+            // txtSN
+            // 
+            this.txtSN.Location = new System.Drawing.Point(281, 30);
+            this.txtSN.Name = "txtSN";
+            this.txtSN.Size = new System.Drawing.Size(150, 21);
+            this.txtSN.TabIndex = 0;
+            this.txtSN.Text = "N_4878595_0226_T_0001";
+            this.txtSN.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSN_KeyDown);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 341);
+            this.Controls.Add(this.txtSN);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.pnl2);
             this.Controls.Add(this.label19);
@@ -657,6 +668,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.TextBox txtSN;
     }
 }
 

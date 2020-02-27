@@ -27,6 +27,7 @@ namespace PrintLabel_OPPO
             txtHard.Text = Config.GetAppSetting("Hard");//ConfigurationManager.AppSettings["Hard"];
             txtSoft.Text = Config.GetAppSetting("Soft");//ConfigurationManager.AppSettings["Soft"];
             txtDescribe.Text = Config.GetAppSetting("Describe");//ConfigurationManager.AppSettings["Describe"];
+            txtPC_Nnumber.Text = Config.GetAppSetting("PC_Nnumber");
 
             txtVendor.Text = Config.GetAppSetting("Vendor");//ConfigurationManager.AppSettings["Vendor"];
             txtProduct.Text = Config.GetAppSetting("Product");// ConfigurationManager.AppSettings["Product"];
@@ -48,7 +49,7 @@ namespace PrintLabel_OPPO
                 bool isASCII = i <= 127 ? true : false;
                 if (!isASCII)
                 {
-                    MessageBox.Show("UPN不能转化为Barcode.CODE_128,请输入ASCII字符","UPN输入：",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("UPN不能转化为Barcode.CODE_128,请输入ASCII字符", "UPN输入：", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -63,6 +64,7 @@ namespace PrintLabel_OPPO
             Config.SetAppSetting("Hard", txtHard.Text);
             Config.SetAppSetting("Soft", txtSoft.Text);
             Config.SetAppSetting("Describe", txtDescribe.Text);
+            Config.SetAppSetting("PC_Nnumber", txtPC_Nnumber.Text);
 
             Config.SetAppSetting("Vendor", txtVendor.Text);
             Config.SetAppSetting("Product", txtProduct.Text);

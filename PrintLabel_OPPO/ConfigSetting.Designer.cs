@@ -59,6 +59,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtPC_Nnumber = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +72,7 @@
             this.groupBox1.Controls.Add(this.txtSoft);
             this.groupBox1.Controls.Add(this.txtQC);
             this.groupBox1.Controls.Add(this.txtQTY);
+            this.groupBox1.Controls.Add(this.txtPC_Nnumber);
             this.groupBox1.Controls.Add(this.txtMSD);
             this.groupBox1.Controls.Add(this.txtLN);
             this.groupBox1.Controls.Add(this.txtDC);
@@ -81,6 +84,7 @@
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -145,7 +149,7 @@
             this.txtLN.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtLN.Location = new System.Drawing.Point(80, 110);
             this.txtLN.Name = "txtLN";
-            this.txtLN.Size = new System.Drawing.Size(188, 26);
+            this.txtLN.Size = new System.Drawing.Size(150, 26);
             this.txtLN.TabIndex = 70;
             // 
             // txtDC
@@ -153,7 +157,7 @@
             this.txtDC.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtDC.Location = new System.Drawing.Point(80, 81);
             this.txtDC.Name = "txtDC";
-            this.txtDC.Size = new System.Drawing.Size(188, 26);
+            this.txtDC.Size = new System.Drawing.Size(150, 26);
             this.txtDC.TabIndex = 69;
             // 
             // txtDATE
@@ -372,6 +376,25 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(237, 83);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 16);
+            this.label9.TabIndex = 60;
+            this.label9.Text = "电脑编号:";
+            // 
+            // txtPC_Nnumber
+            // 
+            this.txtPC_Nnumber.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtPC_Nnumber.Location = new System.Drawing.Point(322, 81);
+            this.txtPC_Nnumber.MaxLength = 1;
+            this.txtPC_Nnumber.Name = "txtPC_Nnumber";
+            this.txtPC_Nnumber.Size = new System.Drawing.Size(40, 26);
+            this.txtPC_Nnumber.TabIndex = 72;
+            // 
             // ConfigSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -422,5 +445,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtPC_Nnumber;
+        private System.Windows.Forms.Label label9;
     }
 }
