@@ -99,8 +99,10 @@ namespace PrintLabel_OPPO
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
                 printDocument1.PrinterSettings = printDocument2.PrinterSettings = printDialog.PrinterSettings;
-                printDocument1.Print();
-                printDocument2.Print();
+                for (int i = 0; i < numPrint1.Value; i++)
+                { printDocument1.Print(); }
+                for (int i = 0; i < numPrint2.Value; i++)
+                { printDocument2.Print(); }
             }
         }
 

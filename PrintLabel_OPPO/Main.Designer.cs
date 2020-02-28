@@ -78,6 +78,9 @@
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPrint = new System.Windows.Forms.Button();
             this.txtSN = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.numPrint1 = new System.Windows.Forms.NumericUpDown();
+            this.numPrint2 = new System.Windows.Forms.NumericUpDown();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picQRcode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUPN)).BeginInit();
@@ -92,16 +95,18 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrint1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrint2)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(137, 43);
+            this.label7.Location = new System.Drawing.Point(14, 68);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 12);
+            this.label7.Size = new System.Drawing.Size(89, 12);
             this.label7.TabIndex = 4;
-            this.label7.Text = "UPN条码模板";
+            this.label7.Text = "UPN条码模板  X";
             // 
             // printDocument1
             // 
@@ -133,7 +138,7 @@
             this.pnl.Controls.Add(this.label2);
             this.pnl.Controls.Add(this.label1);
             this.pnl.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.pnl.Location = new System.Drawing.Point(12, 58);
+            this.pnl.Location = new System.Drawing.Point(12, 93);
             this.pnl.Name = "pnl";
             this.pnl.Size = new System.Drawing.Size(346, 276);
             this.pnl.TabIndex = 5;
@@ -342,11 +347,11 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(494, 43);
+            this.label19.Location = new System.Drawing.Point(371, 68);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(89, 12);
+            this.label19.Size = new System.Drawing.Size(107, 12);
             this.label19.TabIndex = 58;
-            this.label19.Text = "OPPO物料标识贴";
+            this.label19.Text = "OPPO物料标识贴  X";
             // 
             // printDocument2
             // 
@@ -365,7 +370,7 @@
             this.pnl2.Controls.Add(this.panel5);
             this.pnl2.Controls.Add(this.panel4);
             this.pnl2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.pnl2.Location = new System.Drawing.Point(368, 58);
+            this.pnl2.Location = new System.Drawing.Point(368, 93);
             this.pnl2.Name = "pnl2";
             this.pnl2.Size = new System.Drawing.Size(346, 276);
             this.pnl2.TabIndex = 60;
@@ -556,7 +561,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(12, 30);
+            this.btnPrint.Location = new System.Drawing.Point(216, 37);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 23);
             this.btnPrint.TabIndex = 62;
@@ -566,18 +571,66 @@
             // 
             // txtSN
             // 
-            this.txtSN.Location = new System.Drawing.Point(281, 30);
+            this.txtSN.Location = new System.Drawing.Point(42, 37);
             this.txtSN.Name = "txtSN";
             this.txtSN.Size = new System.Drawing.Size(150, 21);
             this.txtSN.TabIndex = 0;
             this.txtSN.Text = "N_4878595_0226_T_0001";
             this.txtSN.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSN_KeyDown);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(13, 40);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(23, 12);
+            this.label13.TabIndex = 63;
+            this.label13.Text = "SN:";
+            // 
+            // numPrint1
+            // 
+            this.numPrint1.Location = new System.Drawing.Point(109, 66);
+            this.numPrint1.Maximum = new decimal(new int[] {
+            9,
+            0,
+            0,
+            0});
+            this.numPrint1.Name = "numPrint1";
+            this.numPrint1.ReadOnly = true;
+            this.numPrint1.Size = new System.Drawing.Size(35, 21);
+            this.numPrint1.TabIndex = 64;
+            this.numPrint1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numPrint2
+            // 
+            this.numPrint2.Location = new System.Drawing.Point(484, 66);
+            this.numPrint2.Maximum = new decimal(new int[] {
+            9,
+            0,
+            0,
+            0});
+            this.numPrint2.Name = "numPrint2";
+            this.numPrint2.ReadOnly = true;
+            this.numPrint2.Size = new System.Drawing.Size(35, 21);
+            this.numPrint2.TabIndex = 65;
+            this.numPrint2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 341);
+            this.ClientSize = new System.Drawing.Size(724, 380);
+            this.Controls.Add(this.numPrint2);
+            this.Controls.Add(this.numPrint1);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.txtSN);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.pnl2);
@@ -613,6 +666,8 @@
             this.panel4.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrint1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrint2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -669,6 +724,9 @@
         private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.TextBox txtSN;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.NumericUpDown numPrint1;
+        private System.Windows.Forms.NumericUpDown numPrint2;
     }
 }
 
