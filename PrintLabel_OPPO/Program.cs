@@ -16,7 +16,12 @@ namespace PrintLabel_OPPO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+
+            DialogResult dr = new Page.Login().ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Application.Run(new Main());
+            }
         }
     }
 }

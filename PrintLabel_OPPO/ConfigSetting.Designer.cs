@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtExpiration = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtDescribe = new System.Windows.Forms.TextBox();
             this.txtHard = new System.Windows.Forms.TextBox();
             this.txtSoft = new System.Windows.Forms.TextBox();
             this.txtQC = new System.Windows.Forms.TextBox();
             this.txtQTY = new System.Windows.Forms.TextBox();
+            this.txtPC_Nnumber = new System.Windows.Forms.TextBox();
             this.txtMSD = new System.Windows.Forms.TextBox();
             this.txtLN = new System.Windows.Forms.TextBox();
             this.txtDC = new System.Windows.Forms.TextBox();
@@ -45,6 +48,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,14 +63,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtPC_Nnumber = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtExpiration);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtDescribe);
             this.groupBox1.Controls.Add(this.txtHard);
             this.groupBox1.Controls.Add(this.txtSoft);
@@ -95,6 +99,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "UPN条码模板";
+            // 
+            // txtExpiration
+            // 
+            this.txtExpiration.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtExpiration.Location = new System.Drawing.Point(322, 110);
+            this.txtExpiration.Name = "txtExpiration";
+            this.txtExpiration.Size = new System.Drawing.Size(40, 26);
+            this.txtExpiration.TabIndex = 79;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(219, 112);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(96, 16);
+            this.label10.TabIndex = 78;
+            this.label10.Text = "保质期(天):";
             // 
             // txtDescribe
             // 
@@ -131,15 +153,24 @@
             // txtQTY
             // 
             this.txtQTY.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtQTY.Location = new System.Drawing.Point(283, 139);
+            this.txtQTY.Location = new System.Drawing.Point(322, 139);
             this.txtQTY.Name = "txtQTY";
             this.txtQTY.Size = new System.Drawing.Size(40, 26);
             this.txtQTY.TabIndex = 73;
             // 
+            // txtPC_Nnumber
+            // 
+            this.txtPC_Nnumber.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtPC_Nnumber.Location = new System.Drawing.Point(322, 81);
+            this.txtPC_Nnumber.MaxLength = 1;
+            this.txtPC_Nnumber.Name = "txtPC_Nnumber";
+            this.txtPC_Nnumber.Size = new System.Drawing.Size(40, 26);
+            this.txtPC_Nnumber.TabIndex = 72;
+            // 
             // txtMSD
             // 
             this.txtMSD.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtMSD.Location = new System.Drawing.Point(283, 52);
+            this.txtMSD.Location = new System.Drawing.Point(322, 52);
             this.txtMSD.Name = "txtMSD";
             this.txtMSD.Size = new System.Drawing.Size(40, 26);
             this.txtMSD.TabIndex = 72;
@@ -149,7 +180,7 @@
             this.txtLN.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtLN.Location = new System.Drawing.Point(80, 110);
             this.txtLN.Name = "txtLN";
-            this.txtLN.Size = new System.Drawing.Size(150, 26);
+            this.txtLN.Size = new System.Drawing.Size(94, 26);
             this.txtLN.TabIndex = 70;
             // 
             // txtDC
@@ -157,7 +188,7 @@
             this.txtDC.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtDC.Location = new System.Drawing.Point(80, 81);
             this.txtDC.Name = "txtDC";
-            this.txtDC.Size = new System.Drawing.Size(150, 26);
+            this.txtDC.Size = new System.Drawing.Size(94, 26);
             this.txtDC.TabIndex = 69;
             // 
             // txtDATE
@@ -190,7 +221,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label21.Location = new System.Drawing.Point(237, 170);
+            this.label21.Location = new System.Drawing.Point(227, 170);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(80, 16);
             this.label21.TabIndex = 66;
@@ -210,7 +241,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.Location = new System.Drawing.Point(237, 141);
+            this.label20.Location = new System.Drawing.Point(247, 141);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(40, 16);
             this.label20.TabIndex = 64;
@@ -236,6 +267,16 @@
             this.label5.TabIndex = 62;
             this.label5.Text = "L/N:";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(227, 83);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 16);
+            this.label9.TabIndex = 60;
+            this.label9.Text = "电脑编号:";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -250,7 +291,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(237, 54);
+            this.label3.Location = new System.Drawing.Point(247, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 16);
             this.label3.TabIndex = 60;
@@ -376,25 +417,6 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(237, 83);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 16);
-            this.label9.TabIndex = 60;
-            this.label9.Text = "电脑编号:";
-            // 
-            // txtPC_Nnumber
-            // 
-            this.txtPC_Nnumber.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtPC_Nnumber.Location = new System.Drawing.Point(322, 81);
-            this.txtPC_Nnumber.MaxLength = 1;
-            this.txtPC_Nnumber.Name = "txtPC_Nnumber";
-            this.txtPC_Nnumber.Size = new System.Drawing.Size(40, 26);
-            this.txtPC_Nnumber.TabIndex = 72;
-            // 
             // ConfigSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -447,5 +469,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtPC_Nnumber;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtExpiration;
+        private System.Windows.Forms.Label label10;
     }
 }

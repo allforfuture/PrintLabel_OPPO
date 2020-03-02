@@ -28,6 +28,7 @@ namespace PrintLabel_OPPO
             txtSoft.Text = Config.GetAppSetting("Soft");//ConfigurationManager.AppSettings["Soft"];
             txtDescribe.Text = Config.GetAppSetting("Describe");//ConfigurationManager.AppSettings["Describe"];
             txtPC_Nnumber.Text = Config.GetAppSetting("PC_Nnumber");
+            txtExpiration.Text = Config.GetAppSetting("Expiration");
 
             txtVendor.Text = Config.GetAppSetting("Vendor");//ConfigurationManager.AppSettings["Vendor"];
             txtProduct.Text = Config.GetAppSetting("Product");// ConfigurationManager.AppSettings["Product"];
@@ -65,6 +66,7 @@ namespace PrintLabel_OPPO
             Config.SetAppSetting("Soft", txtSoft.Text);
             Config.SetAppSetting("Describe", txtDescribe.Text);
             Config.SetAppSetting("PC_Nnumber", txtPC_Nnumber.Text);
+            Config.SetAppSetting("Expiration", txtExpiration.Text);
 
             Config.SetAppSetting("Vendor", txtVendor.Text);
             Config.SetAppSetting("Product", txtProduct.Text);

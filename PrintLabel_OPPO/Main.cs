@@ -18,12 +18,51 @@ namespace PrintLabel_OPPO
             get { return Config.GetAppSetting("PC_Nnumber"); }
         }
 
+        int Expiration
+        {
+            get { return Convert.ToUInt16(Config.GetAppSetting("Expiration")); }
+        }
+
+        public enum Model
+        {
+            error = -1,
+            tray = 0,
+            pack = 1,
+            carton = 2,
+            pallet = 3
+        }
+
+        public Model model
+        {
+            get
+            {
+                switch (txtSN.Text.Split('_')[3])
+                {
+                    case "T":
+                        return Model.tray;
+                    case "P":
+                        return Model.pack;
+                    case "C":
+                        return Model.carton;
+                    case "L":
+                        return Model.pallet;
+                    default:
+                        return Model.error;
+                }
+            }
+        }
+
         public Main()
         {
             InitializeComponent();
             Text += " " + Application.ProductVersion.ToString();
             RefreshTxt();
             RefreshImage();
+            if (Page.Login.Role != "Admin")
+            {
+                //btnSetting.Enabled = btnUnpack.Enabled = btnReprint.Enabled = false;
+                //txtUPN
+            }
             main = this;
         }
 
@@ -119,7 +158,6 @@ namespace PrintLabel_OPPO
                 //N_4878595_0226_T_0001
                 string product = info[1];
                 string date = info[2];
-                string model = info[3];
                 string num = info[4];
 
                 string year = "202" + date.Substring(0, 1); ;
@@ -152,16 +190,29 @@ namespace PrintLabel_OPPO
 
                 DateTime time = Convert.ToDateTime(year + "-" + month + "-" + day);
 
+                #region 查询成品数量
+                int printQTY = 0;
+                string sqlQTY = PrintLabel_OPPO.Unit.DB.QTYsql.sql(model, txtSN.Text);
+                printQTY = (int)new Unit.DB.Help().ExecuteScalar(sqlQTY);
+                if (printQTY == 0)
+                {
+                    MessageBox.Show($"该SN在数据库中的成品数量为空", "Database", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                #endregion
+
                 #region 控件赋值
                 if (txtVendor.Text == "")
                 {
                     MessageBox.Show("供应商代码不能为空", "供应商代码", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                txtUPN.Text = product + "-" + txtVendor.Text + PC_Nnumber + "-" + "2" + date + "-" + model + num;
-                txtDATE.Text = time.ToString("yyyy-MM-dd");
+                txtUPN.Text = product + "-" + txtVendor.Text + PC_Nnumber + "-" + "2" + date + "-" + info[3] + num;
+                txtDATE.Text = time.AddDays(Expiration).ToString("yyyy-MM-dd");
                 txtDC.Text = year.Substring(2, 2) + GetWeekOfYear(time);
                 txtLN.Text = time.ToString("yyyyMMdd");
+                txtQTY.Text = txtQTY2.Text = printQTY.ToString();
+
 
                 txtProduct.Text = product;
                 #endregion
@@ -174,12 +225,12 @@ namespace PrintLabel_OPPO
             /// </summary>
             /// <param name="dt">日期</param>
             /// <returns></returns>
-            int GetWeekOfYear(DateTime dt)
+            string GetWeekOfYear(DateTime dt)
             {
                 System.Globalization.GregorianCalendar gc = new System.Globalization.GregorianCalendar();
                 int weekOfYear = gc.GetWeekOfYear(dt, System.Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Sunday);
-
-                return weekOfYear;
+                string result = "0" + weekOfYear;
+                return result.Substring(result.Length-2, 2);
             }
         }
     }

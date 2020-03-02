@@ -575,7 +575,7 @@
             this.txtSN.Name = "txtSN";
             this.txtSN.Size = new System.Drawing.Size(150, 21);
             this.txtSN.TabIndex = 0;
-            this.txtSN.Text = "N_4878595_0226_T_0001";
+            this.txtSN.Text = "N_4878595_0118_L_0001";
             this.txtSN.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSN_KeyDown);
             // 
             // label13

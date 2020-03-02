@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Npgsql, Version=2.0.14.3, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DB\Npgsql.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -64,14 +68,24 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Page\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Property\SN.cs" />
+    <Compile Include="Unit\DB\Help.cs" />
+    <Compile Include="Unit\DB\QTYsql.cs" />
     <EmbeddedResource Include="ConfigSetting.resx">
       <DependentUpon>ConfigSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -110,6 +124,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Barcode\zxing.dll" />
+    <Content Include="Unit\DB\Mono.Security.dll" />
+    <Content Include="Unit\DB\Npgsql.dll" />
     <Content Include="资料\仓库\《UPN标签》和《物料标示贴》.png" />
     <Content Include="资料\需求\包装规范\OPPO 外箱標籤參考%28190923%29 %282%29.jpg" />
     <Content Include="资料\需求\包装规范\OPPO 發運單樣版%28190923%29.jpg" />
