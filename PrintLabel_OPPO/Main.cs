@@ -55,13 +55,13 @@ namespace PrintLabel_OPPO
         public Main()
         {
             InitializeComponent();
-            Text += " " + Application.ProductVersion.ToString();
+            Text = Application.ProductName + " " + Application.ProductVersion;
             RefreshTxt();
             RefreshImage();
             if (Page.Login.Role != "Admin")
             {
-                //btnSetting.Enabled = btnUnpack.Enabled = btnReprint.Enabled = false;
-                //txtUPN
+                设置ToolStripMenuItem.Enabled = false;
+                changeTxtEnabled(false);
             }
             main = this;
         }
@@ -75,12 +75,18 @@ namespace PrintLabel_OPPO
         {
             RefreshImage();
             changeTxtBorderStyle(BorderStyle.None);
+            if (Page.Login.Role != "Admin")
+                changeTxtEnabled(true);
+
             #region 打印
             Bitmap bitmap = new Bitmap(pnl.Width, pnl.Height);
             pnl.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
             e.Graphics.DrawImage(bitmap, 0, 0, bitmap.Width, bitmap.Height);
             #endregion
+
             changeTxtBorderStyle(BorderStyle.Fixed3D);
+            if (Page.Login.Role != "Admin")
+                changeTxtEnabled(false);
         }
 
         public void RefreshTxt()
@@ -125,11 +131,35 @@ namespace PrintLabel_OPPO
             txtDescribe.BorderStyle = borderStyle;
         }
 
+        void changeTxtEnabled(bool b)
+        {
+            txtUPN.Enabled =
+            txtDATE.Enabled =
+            txtMSD.Enabled =
+            txtDC.Enabled =
+            txtLN.Enabled =
+            txtQC.Enabled =
+            txtQTY.Enabled =
+            txtHard.Enabled =
+            txtSoft.Enabled =
+            txtDescribe.Enabled =
+            txtVendor.Enabled =
+            txtProduct.Enabled =
+            txtQTY2.Enabled =
+            txtDescribe2.Enabled = b;
+        }
+
         private void printDocument2_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+            if (Page.Login.Role != "Admin")
+                changeTxtEnabled(true);
+
             Bitmap bitmap = new Bitmap(pnl2.Width, pnl2.Height);
             pnl2.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
             e.Graphics.DrawImage(bitmap, 0, 0, bitmap.Width, bitmap.Height);
+
+            if (Page.Login.Role != "Admin")
+                changeTxtEnabled(false);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -149,6 +179,7 @@ namespace PrintLabel_OPPO
         {
             if (txtSN.Text != "" && e.KeyCode == Keys.Return)
             {
+                txtUPN.Text = txtDATE.Text = txtDC.Text = txtLN.Text = txtQTY.Text = txtProduct.Text = txtQTY2.Text = "";
                 string[] info = txtSN.Text.Split('_');
                 if (info.Length != 5)
                 {
