@@ -386,10 +386,10 @@
             // txtDescribe2
             // 
             this.txtDescribe2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescribe2.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtDescribe2.Font = new System.Drawing.Font("宋体", 16F);
             this.txtDescribe2.Location = new System.Drawing.Point(0, 3);
             this.txtDescribe2.Name = "txtDescribe2";
-            this.txtDescribe2.Size = new System.Drawing.Size(170, 28);
+            this.txtDescribe2.Size = new System.Drawing.Size(170, 25);
             this.txtDescribe2.TabIndex = 14;
             // 
             // panel11
