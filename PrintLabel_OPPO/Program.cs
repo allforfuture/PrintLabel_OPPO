@@ -20,7 +20,8 @@ namespace PrintLabel_OPPO
             DialogResult dr = new Page.Login().ShowDialog();
             if (dr == DialogResult.OK)
             {
-                Application.Run(new Main());
+                //Application.Run(new Main());
+                Application.Run(new Main2());
             }
         }
     }
