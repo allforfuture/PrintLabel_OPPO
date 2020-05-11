@@ -82,7 +82,9 @@ namespace PrintLabel_OPPO
             #region 打印
             Bitmap bitmap = new Bitmap(pnl.Width, pnl.Height);
             pnl.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+            bitmap.RotateFlip(RotateFlipType.Rotate90FlipNone);
             e.Graphics.DrawImage(bitmap, 0, 0, bitmap.Width, bitmap.Height);
+            //e.Graphics.DrawImage(bitmap, 0, 0);
             #endregion
 
             controlBringToFront();
@@ -224,35 +226,35 @@ namespace PrintLabel_OPPO
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            //PrintDialog printDialog = new PrintDialog();
-            //if (printDialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    printDocument1.PrinterSettings = printDocument2.PrinterSettings = printDialog.PrinterSettings;
-            //    for (int i = 0; i < numPrint1.Value; i++)
-            //    { printDocument1.Print(); }
-            //    for (int i = 0; i < numPrint2.Value; i++)
-            //    { printDocument2.Print(); }
-            //}
-
             PrintDialog printDialog = new PrintDialog();
-            if (numPrint1.Value != 0)
+            if (printDialog.ShowDialog() == DialogResult.OK)
             {
-                if (printDialog.ShowDialog() == DialogResult.OK)
-                {
-                    printDocument1.PrinterSettings = printDialog.PrinterSettings;
-                    for (int i = 0; i < numPrint1.Value; i++)
-                    { printDocument1.Print(); }
-                }
+                printDocument1.PrinterSettings = printDocument2.PrinterSettings = printDialog.PrinterSettings;
+                for (int i = 0; i < numPrint1.Value; i++)
+                { printDocument1.Print(); }
+                for (int i = 0; i < numPrint2.Value; i++)
+                { printDocument2.Print(); }
             }
-            if (numPrint2.Value != 0)
-            {
-                if (printDialog.ShowDialog() == DialogResult.OK)
-                {
-                    printDocument2.PrinterSettings = printDialog.PrinterSettings;
-                    for (int i = 0; i < numPrint2.Value; i++)
-                    { printDocument2.Print(); }
-                }
-            }
+
+            //PrintDialog printDialog = new PrintDialog();
+            //if (numPrint1.Value != 0)
+            //{
+            //    if (printDialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        printDocument1.PrinterSettings = printDialog.PrinterSettings;
+            //        for (int i = 0; i < numPrint1.Value; i++)
+            //        { printDocument1.Print(); }
+            //    }
+            //}
+            //if (numPrint2.Value != 0)
+            //{
+            //    if (printDialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        printDocument2.PrinterSettings = printDialog.PrinterSettings;
+            //        for (int i = 0; i < numPrint2.Value; i++)
+            //        { printDocument2.Print(); }
+            //    }
+            //}
         }
 
         private void txtSN_KeyDown(object sender, KeyEventArgs e)
