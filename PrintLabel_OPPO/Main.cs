@@ -74,23 +74,7 @@ namespace PrintLabel_OPPO
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             RefreshImage();
-            controlSendToBack();
-            changeTxtBorderStyle(BorderStyle.None);
-            if (Page.Login.Role != "Admin")
-                changeTxtEnabled(true);
-
-            #region 打印
-            Bitmap bitmap = new Bitmap(pnl.Width, pnl.Height);
-            pnl.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
-            bitmap.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            e.Graphics.DrawImage(bitmap, 0, 0, bitmap.Width, bitmap.Height);
-            //e.Graphics.DrawImage(bitmap, 0, 0);
-            #endregion
-
-            controlBringToFront();
-            changeTxtBorderStyle(BorderStyle.Fixed3D);
-            if (Page.Login.Role != "Admin")
-                changeTxtEnabled(false);
+            painPanel(pnl, e);
         }
 
         public void RefreshTxt()
@@ -122,28 +106,6 @@ namespace PrintLabel_OPPO
             picQRcode.Image = Barcode.BarcodeHelper.QRcode(QRcode, picQRcode.Width, picQRcode.Height);
         }
 
-        void changeTxtBorderStyle(BorderStyle borderStyle)
-        {
-            txtUPN.BorderStyle =
-            txtDATE.BorderStyle =
-            txtMSD.BorderStyle =
-            txtDC.BorderStyle =
-            txtLN.BorderStyle =
-            txtQC.BorderStyle =
-            txtQTY.BorderStyle =
-            txtHard.BorderStyle =
-            txtSoft.BorderStyle =
-            txtDescribe.BorderStyle =
-
-            txtVendor.BorderStyle =
-            txtProduct.BorderStyle =
-            txtQTY2.BorderStyle =
-            txtDescribe2.BorderStyle =
-            txtDate2.BorderStyle =
-            txtStage.BorderStyle =
-            txtChange.BorderStyle = borderStyle;
-        }
-
         void changeTxtEnabled(bool b)
         {
             txtUPN.Enabled =
@@ -167,62 +129,64 @@ namespace PrintLabel_OPPO
             cheChangeN.Enabled =
             txtChange.Enabled = b;
         }
-
-        void controlSendToBack()
+        
+        void painPanel(System.Windows.Forms.Panel panel, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            txtHard.SendToBack();
-            txtSoft.SendToBack();
-            txtDescribe.SendToBack();
+            foreach (Control var in panel.Controls)
+            {
+                if (var is Label)
+                {
+                    string s = var.Text;
+                    Font font = var.Font;
+                    Brush brush = Brushes.Black;
+                    PointF point = var.Location;
+                    e.Graphics.DrawString(s, font, brush, point);
+                }
+                else if (var is TextBox)
+                {
+                    string s = var.Text;
+                    Font font = var.Font;
+                    Brush brush = Brushes.Black;
+                    PointF point = var.Location;
+                    e.Graphics.DrawString(s, font, brush, point);
+                }
+                else if (var is CheckBox)
+                {
+                    string s = var.Text;
+                    Font font = var.Font;
+                    Brush brush = Brushes.Black;
+                    PointF point = var.Location;
+                    e.Graphics.DrawString(s, font, brush, point);
+                    //方框
+                    Point p = new Point(var.Location.X + 20, var.Location.Y);
+                    Rectangle rectangle = new Rectangle(p, new Size(15, 15));
+                    e.Graphics.DrawRectangle(new Pen(brush), rectangle);
+                    //是否打勾
+                    Point[] pit = { new Point(p.X + 1, p.Y + 7), new Point(p.X + 6, p.Y + 14), new Point(p.X + 14, p.Y + 1) };
+                    CheckBox check = var as CheckBox;
+                    if (check.Checked)
+                        e.Graphics.DrawLines(new Pen(brush), pit);
 
-            txtVendor.SendToBack();
-            txtProduct.SendToBack();
-            txtQTY2.SendToBack();
-            txtDescribe2.SendToBack();
-            txtDate2.SendToBack();
-            txtStage.SendToBack();
-            txtChange.SendToBack();
-            cheChangeY.SendToBack();
-            cheChangeN.SendToBack();
-        }
-
-        void controlBringToFront()
-        {
-            txtHard.BringToFront();
-            txtSoft.BringToFront();
-            txtDescribe.BringToFront();
-
-            txtVendor.BringToFront();
-            txtProduct.BringToFront();
-            txtQTY2.BringToFront();
-            txtDescribe2.BringToFront();
-            txtDate2.BringToFront();
-            txtStage.BringToFront();
-            txtChange.BringToFront();
-            cheChangeY.BringToFront();
-            cheChangeN.BringToFront();
+                    //CheckBox check = var as CheckBox;
+                    //PointF point = var.Location;
+                    //Bitmap bitmap = new Bitmap(check.Width, check.Height);
+                    ////DrawToBitmap会先绘画顶层的控件，所以最底层的控件会遮挡高层次的控件
+                    //check.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+                    //e.Graphics.DrawImage(bitmap, point);
+                }
+                else if (var is PictureBox)
+                {
+                    PictureBox pic = var as PictureBox;
+                    Image image = pic.Image;
+                    PointF point = var.Location;
+                    e.Graphics.DrawImage(image, point);
+                }
+            }
         }
 
         private void printDocument2_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            controlSendToBack();
-            changeTxtBorderStyle(BorderStyle.None);
-            if (Page.Login.Role != "Admin")
-                changeTxtEnabled(true);
-
-            //Bitmap bitmap = new Bitmap(pnl2.Width, pnl2.Height);
-            //pnl2.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
-            //e.Graphics.DrawImage(bitmap, 0, 0, bitmap.Width, bitmap.Height);
-            
-
-            Bitmap bitmap = new Bitmap(pnl3.Width, pnl3.Height);
-            //DrawToBitmap会先绘画顶层的控件，所以最底层的控件会遮挡高层次的控件
-            pnl3.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
-            e.Graphics.DrawImage(bitmap, 0, 0, bitmap.Width, bitmap.Height);
-
-            controlBringToFront();
-            changeTxtBorderStyle(BorderStyle.Fixed3D);
-            if (Page.Login.Role != "Admin")
-                changeTxtEnabled(false);
+            painPanel(pnl3, e);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -231,31 +195,13 @@ namespace PrintLabel_OPPO
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
                 printDocument1.PrinterSettings = printDocument2.PrinterSettings = printDialog.PrinterSettings;
+                printDocument1.DefaultPageSettings.Landscape = true;
                 for (int i = 0; i < numPrint1.Value; i++)
                 { printDocument1.Print(); }
+                printDocument2.DefaultPageSettings.Landscape = false;
                 for (int i = 0; i < numPrint2.Value; i++)
                 { printDocument2.Print(); }
             }
-
-            //PrintDialog printDialog = new PrintDialog();
-            //if (numPrint1.Value != 0)
-            //{
-            //    if (printDialog.ShowDialog() == DialogResult.OK)
-            //    {
-            //        printDocument1.PrinterSettings = printDialog.PrinterSettings;
-            //        for (int i = 0; i < numPrint1.Value; i++)
-            //        { printDocument1.Print(); }
-            //    }
-            //}
-            //if (numPrint2.Value != 0)
-            //{
-            //    if (printDialog.ShowDialog() == DialogResult.OK)
-            //    {
-            //        printDocument2.PrinterSettings = printDialog.PrinterSettings;
-            //        for (int i = 0; i < numPrint2.Value; i++)
-            //        { printDocument2.Print(); }
-            //    }
-            //}
         }
 
         private void txtSN_KeyDown(object sender, KeyEventArgs e)
