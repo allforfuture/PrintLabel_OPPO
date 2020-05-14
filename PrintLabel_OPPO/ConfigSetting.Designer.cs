@@ -63,6 +63,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.txtStage = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -319,6 +321,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtStage);
+            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtDescribe2);
             this.groupBox2.Controls.Add(this.txtQTY2);
             this.groupBox2.Controls.Add(this.txtProduct);
@@ -329,7 +333,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(3, 251);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(389, 187);
+            this.groupBox2.Size = new System.Drawing.Size(389, 218);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "OPPO物料标识贴";
@@ -417,6 +421,24 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // txtStage
+            // 
+            this.txtStage.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtStage.Location = new System.Drawing.Point(170, 171);
+            this.txtStage.Name = "txtStage";
+            this.txtStage.Size = new System.Drawing.Size(204, 35);
+            this.txtStage.TabIndex = 65;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Location = new System.Drawing.Point(37, 171);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(106, 24);
+            this.label11.TabIndex = 64;
+            this.label11.Text = "物料阶段";
+            // 
             // ConfigSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -425,7 +447,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ConfigSetting";
-            this.Size = new System.Drawing.Size(520, 440);
+            this.Size = new System.Drawing.Size(520, 480);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -471,5 +493,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtExpiration;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtStage;
+        private System.Windows.Forms.Label label11;
     }
 }

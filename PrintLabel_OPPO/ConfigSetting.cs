@@ -34,6 +34,7 @@ namespace PrintLabel_OPPO
             txtProduct.Text = Config.GetAppSetting("Product");// ConfigurationManager.AppSettings["Product"];
             txtQTY2.Text = Config.GetAppSetting("QTY2");// ConfigurationManager.AppSettings["QTY2"];
             txtDescribe2.Text = Config.GetAppSetting("Describe2");// ConfigurationManager.AppSettings["Describe2"];
+            txtStage.Text = Config.GetAppSetting("Stage");
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -72,6 +73,7 @@ namespace PrintLabel_OPPO
             Config.SetAppSetting("Product", txtProduct.Text);
             Config.SetAppSetting("QTY2", txtQTY2.Text);
             Config.SetAppSetting("Describe2", txtDescribe2.Text);
+            Config.SetAppSetting("Stage", txtStage.Text);
             Main.main.RefreshTxt();
             Main.main.RefreshImage();
             MessageBox.Show("修改成功");
@@ -83,7 +85,7 @@ namespace PrintLabel_OPPO
     {
         public ConfigSettingForm()
         {
-            Size = new Size(540, 480);
+            Size = new Size(540, 520);
             Text = "设置";
             //ConfigSetting configSetting = new ConfigSetting();
             //configSetting.Dock = DockStyle.Fill;

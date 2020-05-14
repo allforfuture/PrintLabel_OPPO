@@ -74,6 +74,7 @@ namespace PrintLabel_OPPO
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             RefreshImage();
+            controlSendToBack();
             changeTxtBorderStyle(BorderStyle.None);
             if (Page.Login.Role != "Admin")
                 changeTxtEnabled(true);
@@ -81,9 +82,12 @@ namespace PrintLabel_OPPO
             #region 打印
             Bitmap bitmap = new Bitmap(pnl.Width, pnl.Height);
             pnl.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+            bitmap.RotateFlip(RotateFlipType.Rotate90FlipNone);
             e.Graphics.DrawImage(bitmap, 0, 0, bitmap.Width, bitmap.Height);
+            //e.Graphics.DrawImage(bitmap, 0, 0);
             #endregion
 
+            controlBringToFront();
             changeTxtBorderStyle(BorderStyle.Fixed3D);
             if (Page.Login.Role != "Admin")
                 changeTxtEnabled(false);
@@ -106,6 +110,7 @@ namespace PrintLabel_OPPO
             txtProduct.Text = Config.GetAppSetting("Product");
             txtQTY2.Text = Config.GetAppSetting("QTY2");
             txtDescribe2.Text = Config.GetAppSetting("Describe2");
+            txtStage.Text = Config.GetAppSetting("Stage");
         }
 
         public void RefreshImage()
@@ -128,7 +133,15 @@ namespace PrintLabel_OPPO
             txtQTY.BorderStyle =
             txtHard.BorderStyle =
             txtSoft.BorderStyle =
-            txtDescribe.BorderStyle = borderStyle;
+            txtDescribe.BorderStyle =
+
+            txtVendor.BorderStyle =
+            txtProduct.BorderStyle =
+            txtQTY2.BorderStyle =
+            txtDescribe2.BorderStyle =
+            txtDate2.BorderStyle =
+            txtStage.BorderStyle =
+            txtChange.BorderStyle = borderStyle;
         }
 
         void changeTxtEnabled(bool b)
@@ -146,18 +159,68 @@ namespace PrintLabel_OPPO
             txtVendor.Enabled =
             txtProduct.Enabled =
             txtQTY2.Enabled =
-            txtDescribe2.Enabled = b;
+            txtDescribe2.Enabled =
+
+            txtDate2.Enabled =
+            txtStage.Enabled =
+            cheChangeY.Enabled =
+            cheChangeN.Enabled =
+            txtChange.Enabled = b;
+        }
+
+        void controlSendToBack()
+        {
+            txtHard.SendToBack();
+            txtSoft.SendToBack();
+            txtDescribe.SendToBack();
+
+            txtVendor.SendToBack();
+            txtProduct.SendToBack();
+            txtQTY2.SendToBack();
+            txtDescribe2.SendToBack();
+            txtDate2.SendToBack();
+            txtStage.SendToBack();
+            txtChange.SendToBack();
+            cheChangeY.SendToBack();
+            cheChangeN.SendToBack();
+        }
+
+        void controlBringToFront()
+        {
+            txtHard.BringToFront();
+            txtSoft.BringToFront();
+            txtDescribe.BringToFront();
+
+            txtVendor.BringToFront();
+            txtProduct.BringToFront();
+            txtQTY2.BringToFront();
+            txtDescribe2.BringToFront();
+            txtDate2.BringToFront();
+            txtStage.BringToFront();
+            txtChange.BringToFront();
+            cheChangeY.BringToFront();
+            cheChangeN.BringToFront();
         }
 
         private void printDocument2_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+            controlSendToBack();
+            changeTxtBorderStyle(BorderStyle.None);
             if (Page.Login.Role != "Admin")
                 changeTxtEnabled(true);
 
-            Bitmap bitmap = new Bitmap(pnl2.Width, pnl2.Height);
-            pnl2.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+            //Bitmap bitmap = new Bitmap(pnl2.Width, pnl2.Height);
+            //pnl2.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+            //e.Graphics.DrawImage(bitmap, 0, 0, bitmap.Width, bitmap.Height);
+            
+
+            Bitmap bitmap = new Bitmap(pnl3.Width, pnl3.Height);
+            //DrawToBitmap会先绘画顶层的控件，所以最底层的控件会遮挡高层次的控件
+            pnl3.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
             e.Graphics.DrawImage(bitmap, 0, 0, bitmap.Width, bitmap.Height);
 
+            controlBringToFront();
+            changeTxtBorderStyle(BorderStyle.Fixed3D);
             if (Page.Login.Role != "Admin")
                 changeTxtEnabled(false);
         }
@@ -173,6 +236,26 @@ namespace PrintLabel_OPPO
                 for (int i = 0; i < numPrint2.Value; i++)
                 { printDocument2.Print(); }
             }
+
+            //PrintDialog printDialog = new PrintDialog();
+            //if (numPrint1.Value != 0)
+            //{
+            //    if (printDialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        printDocument1.PrinterSettings = printDialog.PrinterSettings;
+            //        for (int i = 0; i < numPrint1.Value; i++)
+            //        { printDocument1.Print(); }
+            //    }
+            //}
+            //if (numPrint2.Value != 0)
+            //{
+            //    if (printDialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        printDocument2.PrinterSettings = printDialog.PrinterSettings;
+            //        for (int i = 0; i < numPrint2.Value; i++)
+            //        { printDocument2.Print(); }
+            //    }
+            //}
         }
 
         private void txtSN_KeyDown(object sender, KeyEventArgs e)
@@ -242,6 +325,7 @@ namespace PrintLabel_OPPO
                 txtDATE.Text = time.AddDays(Expiration).ToString("yyyy-MM-dd");
                 txtDC.Text = year.Substring(2, 2) + GetWeekOfYear(time);
                 txtLN.Text = time.ToString("yyyyMMdd");
+                txtDate2.Text = time.ToString("yyyyMMdd");
                 txtQTY.Text = txtQTY2.Text = printQTY.ToString();
 
 
@@ -263,6 +347,22 @@ namespace PrintLabel_OPPO
                 string result = "0" + weekOfYear;
                 return result.Substring(result.Length-2, 2);
             }
+        }
+
+        private void cheChangeN_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cheChangeN.Checked)
+                cheChangeY.Checked = false;
+            else
+                cheChangeY.Checked = true;
+        }
+
+        private void cheChangeY_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cheChangeY.Checked)
+                cheChangeN.Checked = false;
+            else
+                cheChangeN.Checked = true;
         }
     }
 }

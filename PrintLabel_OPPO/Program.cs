@@ -21,7 +21,7 @@ namespace PrintLabel_OPPO
             if (dr == DialogResult.OK)
             {
                 //Application.Run(new Main());
-                Application.Run(new Main2());
+                Application.Run(new Main());
             }
         }
     }
